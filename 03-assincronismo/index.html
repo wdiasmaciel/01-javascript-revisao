@@ -9,41 +9,19 @@
 
 <body>
     <script>
-        // Função Tradicional
-        function somar(a, b) { return a + b; }
-        console.log(somar(3, 5)) // Saída: 8
 
-        // Arrow Function (Retorno implícito em uma linha)
-        const somarArrowFunction = (a, b) => a + b;
-        console.log(somar(6, 7)) // Saída: 13
+        const botao = document.querySelector("#meuBotao");
 
-        // Exemplo de Closure
-        function criarContador() {
-            let numero = 0;
-            return () => ++numero; // Mantém acesso à variável 'numero'
-        }
-        const meuContador = criarContador();
-        console.log(meuContador()); // Saída: 1
-        console.log(meuContador()); // Saída: 2
-
-        /* Outro exemplo de Closure:
-           Mesmo após a execução de criarNovoContador ter acabado, 
-           a função armazenada em meuNovoContador continua tendo 
-           acesso à variável contador.
-        */
-        function criarNovoContador() {
-            let contador = 0; // variável da função externa
-
-            return function () {
-                contador++; // a função interna usa a variável de fora
-                console.log(contador);
-            };
-        }
-
-        const meuNovoContador = criarNovoContador();
-        meuNovoContador(); // Saída: 1
-        meuNovoContador(); // Saída: 2
-    </script>
+        // Assincronismo com Async/Await e Manipulação do DOM
+        botao.addEventListener("click", async () => {
+            try {
+                const resposta = await fetch("https://exemplo.com");
+                const dados = await resposta.json();
+                document.querySelector("#resultado").textContent = dados.nome;
+            } catch (erro) {
+                console.error("Erro na requisição:", erro);
+            }
+        });</script>
 </body>
 
 </html>
