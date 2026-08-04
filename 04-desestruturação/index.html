@@ -19,12 +19,18 @@
         container.innerHTML = `<p>${nome}: ${cidade}</p>`; // Saída: Carlos: Belo Horizonte
 
         // Desestruturação de Vetores (Arrays)
-        const cores = ["Azul", "Verde", "Amarelo"];
+        const cores = ["Azul", "Verde", "Amarelo", "Vermelho", "Roxo"];
         const [primeiraCor, segundaCor] = cores;
         container.innerHTML += `<p>${primeiraCor}: ${segundaCor}</p>`; // Saída: Azul: Verde
 
-        const [, , terceiraCor] = cores;
+        // Insira vírgulas para ignorar os elementos iniciais do vetor
+        const [ , , terceiraCor] = cores;
         container.innerHTML += `<p>Terceira cor: ${terceiraCor}</p>`; // Saída: Terceira cor: Amarelo
+
+        // Pula os dois primeiros e agrupa o resto
+        const [ , , terceira, ...resto] = cores;
+        container.innerHTML += `<p>Terceira cor: ${terceira}</p>`; // Saída: Amarelo
+        container.innerHTML += `<p>Resto: ${resto.join(', ')}</p>`; // Saída: Resto: Vermelho, Roxo
     </script>
 </body>
 
