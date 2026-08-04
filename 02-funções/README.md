@@ -16,6 +16,7 @@ Uma função que guarda o acesso às variáveis de um escopo externo mesmo depoi
 
 Closure (fechamento) em JavaScript é a capacidade de uma função se lembrar e acessar as variáveis do seu escopo externo (de fora), mesmo depois que a função de fora já terminou de rodar. 
 
+Quando você cria uma função dentro de outra função, a função de dentro ganha uma referência ao ambiente onde foi gerada.
 
 Em JavaScript, toda função se comporta naturalmente como uma closure quando usa dados criados fora dela.
 
