@@ -22,6 +22,9 @@
         const cores = ["Azul", "Verde", "Amarelo"];
         const [primeiraCor, segundaCor] = cores;
         container.innerHTML += `<p>${primeiraCor}: ${segundaCor}</p>`; // Saída: Azul: Verde
+
+        const [, , terceiraCor] = cores;
+        container.innerHTML += `<p>Terceira cor: ${terceiraCor}</p>`; // Saída: Terceira cor: Amarelo
     </script>
 </body>
 
