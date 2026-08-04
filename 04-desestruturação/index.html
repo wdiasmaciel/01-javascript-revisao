@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+
+<body>
+    <button id="meuBotao">Buscar Dados</button>
+    <div id="container">
+    </div>
+
+    <script>
+        // Desestruturação de Objetos
+        const usuario = { nome: "Carlos", idade: 28, cidade: "Belo Horizonte" };
+        const { nome, cidade } = usuario;
+        container.innerHTML = `<p>${nome}: ${cidade}</p>`; // Saída: Carlos: Belo Horizonte
+
+        // Desestruturação de Vetores (Arrays)
+        const cores = ["Azul", "Verde", "Amarelo"];
+        const [primeiraCor, segundaCor] = cores;
+        container.innerHTML += `<p>${primeiraCor}: ${segundaCor}</p>`; // Saída: Azul: Verde
+    </script>
+</body>
+
+</html>
