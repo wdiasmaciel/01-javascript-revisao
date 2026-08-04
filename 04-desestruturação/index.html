@@ -22,13 +22,19 @@
         container.innerHTML += `<p>${primeiraCor}: ${segundaCor}</p>`; // Saída: Azul: Verde
 
         // Insira vírgulas para ignorar os elementos iniciais do vetor
-        const [ , , terceiraCor] = cores;
+        const [, , terceiraCor] = cores;
         container.innerHTML += `<p>Terceira cor: ${terceiraCor}</p>`; // Saída: Terceira cor: Amarelo
 
         // Pula os dois primeiros e agrupa o resto
-        const [ , , terceira, ...resto] = cores;
+        const [, , terceira, ...resto] = cores;
         container.innerHTML += `<p>Terceira cor: ${terceira}</p>`; // Saída: Amarelo
         container.innerHTML += `<p>Resto: ${resto.join(', ')}</p>`; // Saída: Resto: Vermelho, Roxo
+
+        // Pula a primeira, pega a segunda (vazia) e a terceira (vazia com padrão)
+        const [ , , , , , sexta, setima = 'branco'] = cores;
+
+        container.innerHTML += `<p>sexta: ${sexta}</p>`;  // Saída: undefined (está vazia e sem padrão)
+        container.innerHTML += `<p>setima: ${setima}</p>`; // Saída: branco (está vazia, mas assumiu o padrão)
     </script>
 </body>
 
