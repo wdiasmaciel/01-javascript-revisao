@@ -4,6 +4,10 @@
 
 Use const para valores que não mudam e let para valores que mudam. 
 
+const impede a reatribuição da variável (embora permita modificar propriedades internas de objetos e arrays). 
+
+let limita o acesso da variável estritamente ao bloco {} onde foi criada.
+
 Evite var.
 
 # Tipos primitivos: 
