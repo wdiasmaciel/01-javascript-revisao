@@ -8,20 +8,27 @@
 </head>
 
 <body>
-    <script>
+    <button id="meuBotao">Buscar Dados</button>
+    <div id="container">
+    </div>
 
+    <script>
         const botao = document.querySelector("#meuBotao");
 
         // Assincronismo com Async/Await e Manipulação do DOM
         botao.addEventListener("click", async () => {
             try {
-                const resposta = await fetch("https://exemplo.com");
+                const resposta = await fetch("https://jsonplaceholder.typicode.com/posts");
                 const dados = await resposta.json();
-                document.querySelector("#resultado").textContent = dados.nome;
+                const container = document.querySelector("#container");
+                container.innerHTML = dados.map(post => `<p>${post.title}</p>`).join('<br>');
             } catch (erro) {
                 console.error("Erro na requisição:", erro);
+            } finally {
+                console.log("Requisição finalizada.");
             }
-        });</script>
+        });
+    </script>
 </body>
 
 </html>
