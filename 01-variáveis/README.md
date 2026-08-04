@@ -8,7 +8,7 @@ const impede a reatribuição da variável (embora permita modificar propriedade
 
 let limita o acesso da variável estritamente ao bloco {} onde foi criada.
 
-Evite var.
+Evite usar var.
 
 # Tipos primitivos: 
 string, number, boolean, null, undefined, symbol (identificador exclusivo para propriedades de objetos para evitar conflitos de nomes) e bigint (números inteiros muito grandes).
