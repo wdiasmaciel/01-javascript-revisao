@@ -4,7 +4,7 @@
 # Exercício
 Usando HTML, CSS e JS escreva um algoritmo que:
 
-1) Leia as postagens em https://jsonplaceholder.typicode.com/posts e as apresente em cartões. Cada cartão deve apresentar todos os dados de sua respectiva postagem.
+1) Leia as postagens em https://jsonplaceholder.typicode.com/posts e as apresente em cartões na página. Cada cartão deve apresentar todos os dados de sua respectiva postagem. As postagens devem ser lidas, quando o usuário clicar no botão que dispara essa funcionalidade.
 
 2) Leia o id de uma postagem informado pelo usuário na página. Leia a postagem em https://jsonplaceholder.typicode.com/posts cujo id foi informado. Exemplo:
 
@@ -19,4 +19,4 @@ https://jsonplaceholder.typicode.com/posts/1
 }
 ```
 
-Os dados da postagem devem ser apresentados em um cartão.
+Os dados da postagem devem ser apresentados em um cartão. A postagem deve ser lidas, quando o usuário clicar no botão que dispara essa funcionalidade.
