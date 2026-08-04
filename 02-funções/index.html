@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+
+<body>
+    <script>
+        // Função Tradicional
+        function somar(a, b) { return a + b; }
+        console.log(somar(3, 5)) // Saída: 8
+
+        // Arrow Function (Retorno implícito em uma linha)
+        const somarArrowFunction = (a, b) => a + b;
+        console.log(somar(6, 7)) // Saída: 13
+
+        // Exemplo de Closure
+        function criarContador() {
+            let numero = 0;
+            return () => ++numero; // Mantém acesso à variável 'numero'
+        }
+        const meuContador = criarContador();
+        console.log(meuContador()); // Saída: 1
+        console.log(meuContador()); // Saída: 2
+
+        // Outro exemplo de Closure
+
+    </script>
+</body>
+
+</html>
