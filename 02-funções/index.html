@@ -26,8 +26,23 @@
         console.log(meuContador()); // Saída: 1
         console.log(meuContador()); // Saída: 2
 
-        // Outro exemplo de Closure
+        /* Outro exemplo de Closure:
+           Mesmo após a execução de criarNovoContador ter acabado, 
+           a função armazenada em meuNovoContador continua tendo 
+           acesso à variável contador.
+        */
+        function criarNovoContador() {
+            let contador = 0; // variável da função externa
 
+            return function () {
+                contador++; // a função interna usa a variável de fora
+                console.log(contador);
+            };
+        }
+
+        const meuNovoContador = criarNovoContador();
+        meuNovoContador(); // Saída: 1
+        meuNovoContador(); // Saída: 2
     </script>
 </body>
 
