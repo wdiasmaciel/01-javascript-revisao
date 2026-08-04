@@ -30,9 +30,8 @@
         container.innerHTML += `<p>Terceira cor: ${terceira}</p>`; // Saída: Amarelo
         container.innerHTML += `<p>Resto: ${resto.join(', ')}</p>`; // Saída: Resto: Vermelho, Roxo
 
-        // Pula a primeira, pega a segunda (vazia) e a terceira (vazia com padrão)
+        // Pula da primeira à quinta, pega a sexta (vazia) e a sétima (vazia com padrão)
         const [ , , , , , sexta, setima = 'branco'] = cores;
-
         container.innerHTML += `<p>sexta: ${sexta}</p>`;  // Saída: undefined (está vazia e sem padrão)
         container.innerHTML += `<p>setima: ${setima}</p>`; // Saída: branco (está vazia, mas assumiu o padrão)
     </script>
