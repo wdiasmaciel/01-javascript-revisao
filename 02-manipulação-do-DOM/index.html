@@ -9,8 +9,8 @@
 
 <body>
     <div class="container">
-        <p id="paragrafo">Parágrafo</p>
-        <button id="btn">OK</button>
+        <p id="paragrafo">Parágrafo.</p>
+        <button id="meuBotao">OK</button>
     </div>
 
     <script>
@@ -19,14 +19,19 @@
       
       function minhaFuncao() {
         const parag = document.getElementById('paragrafo');
-        parag.textContent = 'Parágrafo alterado!';
+        parag.textContent += ' Parágrafo alterado!';
       }
 
-      const meuBotao = document.querySelector('#meuBotao')
+      const meuBotao = document.querySelector('#meuBotao');
       meuBotao.addEventListener('mouseover', () => {
         const container = document.querySelector('.container');
-        container.innerHTML += 'Texto alterado com Arrow Function!';
-        container.style = 'color: white; background-color: red; font-size: 20px; font-weight: bold;';
+        container.insertAdjacentHTML('beforeend', '<p>Texto alterado com Arrow Function!</p>');
+        container.style.cssText = `color: white; 
+                                   background-color: red; 
+                                   padding: 10px; 
+                                   font-size: 20px; 
+                                   font-weight: bold;
+                                   border-radius: 5px;`;
       });
     </script>
 </body>
