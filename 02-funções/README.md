@@ -3,6 +3,11 @@
 ## Funções tradicionais: 
 
 Declaração clássica com a palavra function.
+Sintaxe function nomeDaFuncao() {}
+
+## Função anônima:
+
+Sintaxe function () {}.
 
 ## Arrow functions: 
 
