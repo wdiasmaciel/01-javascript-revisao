@@ -47,6 +47,38 @@
         const meuNovoContador = criarNovoContador();
         meuNovoContador(); // Saída: 1
         meuNovoContador(); // Saída: 2
+
+        /* Outro exemplo de Closure:
+           Como todas as funções internas foram criadas dentro 
+           do mesmo escopo de criarContadorVariasFuncoes, todas 
+           elas compartilham e modificam a mesma variável contador.
+        */
+        function criarContadorVariasFuncoes() {
+            let contador = 0; // Variável privada da função externa.
+
+            // Retornamos um objeto onde cada propriedade é uma função (método):
+            return {
+                incrementar: function () {
+                    contador++;
+                    console.log(`Incrementou: ${contador}`);
+                },
+                decrementar: function () {
+                    contador--;
+                    console.log(`Decrementou: ${contador}`);
+                },
+                zerar: function () {
+                    contador = 0;
+                    console.log(`Zerou: ${contador}`);
+                }
+            };
+        }
+        
+        const contadorVariasFuncoes = criarContadorVariasFuncoes();
+
+        contadorVariasFuncoes.incrementar(); // Saída: Incrementou: 1
+        contadorVariasFuncoes.incrementar(); // Saída: Incrementou: 2
+        contadorVariasFuncoes.decrementar(); // Saída: Decrementou: 1
+        contadorVariasFuncoes.zerar();       // Saída: Zerou: 0
     </script>
 </body>
 

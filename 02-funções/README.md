@@ -25,3 +25,4 @@ Quando você cria uma função dentro de outra função, a função de dentro ga
 
 Em JavaScript, toda função se comporta naturalmente como uma closure quando usa dados criados fora dela.
 
+Para retornar mais de uma função dentro de um Closure, a melhor estratégia é retornar um objeto contendo essas funções como métodos.
