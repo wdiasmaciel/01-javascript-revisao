@@ -49,6 +49,10 @@
         meuNovoContador(); // Saída: 2
 
         /* Outro exemplo de Closure:
+           Para retornar mais de uma função dentro de um Closure, 
+           a melhor estratégia é retornar um objeto contendo essas 
+           funções como métodos.
+           
            Como todas as funções internas foram criadas dentro 
            do mesmo escopo de criarContadorVariasFuncoes, todas 
            elas compartilham e modificam a mesma variável contador.
@@ -72,13 +76,33 @@
                 }
             };
         }
-        
+
         const contadorVariasFuncoes = criarContadorVariasFuncoes();
 
         contadorVariasFuncoes.incrementar(); // Saída: Incrementou: 1
         contadorVariasFuncoes.incrementar(); // Saída: Incrementou: 2
         contadorVariasFuncoes.decrementar(); // Saída: Decrementou: 1
         contadorVariasFuncoes.zerar();       // Saída: Zerou: 0
+
+        /* Outro exemplo de Closure:
+           Você pode reescrever o retorno usando Arrow Functions .
+        */
+        function criarContadorVariasFuncoesArrowFunction() {
+            let contador = 0;
+
+            return {
+                incrementar: () => { contador++; console.log(contador); },
+                decrementar: () => { contador--; console.log(contador); },
+                zerar: () => { contador = 0; console.log(contador); }
+            };
+        }
+
+        const contadorVariasFuncoesArrowFunction = criarContadorVariasFuncoesArrowFunction();
+
+        contadorVariasFuncoesArrowFunction.decrementar(); // Saída: Decrementou: -1
+        contadorVariasFuncoesArrowFunction.decrementar(); // Saída: Decrementou: -2
+        contadorVariasFuncoesArrowFunction.incrementar(); // Saída: Incrementou: -1
+        contadorVariasFuncoesArrowFunction.zerar();       // Saída: Zerou: 0
     </script>
 </body>
 
