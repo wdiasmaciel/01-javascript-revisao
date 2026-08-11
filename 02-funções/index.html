@@ -56,6 +56,17 @@
            Como todas as funções internas foram criadas dentro 
            do mesmo escopo de criarContadorVariasFuncoes, todas 
            elas compartilham e modificam a mesma variável contador.
+
+           OBS:
+           - Encapsulamento: a variável contador fica totalmente protegida. 
+             Ninguém consegue fazer meuContador.contador = 99 por fora do 
+             código. O acesso e a modificação acontecem exclusivamente pelos 
+             métodos permitidos.
+             
+           - Estado Compartilhado: as funções incrementar, decrementar e zerar 
+             não possuem cópias separadas da variável. Elas apontam para a mesma 
+             referência na memória que foi criada quando criarNovoContador() foi 
+             executada.           
         */
         function criarContadorVariasFuncoes() {
             let contador = 0; // Variável privada da função externa.
