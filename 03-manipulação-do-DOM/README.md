@@ -7,4 +7,5 @@ Use document.getElementById ou document.querySelector.
 Use element.addEventListener('click', funcao) para reagir a cliques e ações do usuário.
 
 ## Alteração: 
-Mude textos com element.textContent ou estilos com element.style.
+Mude textos com element.innerHTML ou element.textContent.
+Mude estilos com element.style.
